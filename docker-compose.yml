@@ -1,0 +1,26 @@
+version: "3.8"
+networks:
+  backend:
+services:
+  app:
+    build:
+      context: website/
+    volumes:
+      - ./website:/app
+    networks:
+      - backend
+    depends_on:
+      - backend_container
+    links:
+      - backend_container
+    ports:
+      - "8080:8080"
+  backend_container:
+    build: backend/
+    volumes:
+      - ./backend:/app
+    networks:
+      - backend
+    ports:
+      - "8081:8081"
+      - "8085:8085"

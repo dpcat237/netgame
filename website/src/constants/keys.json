@@ -1,0 +1,10 @@
+{
+  "api":
+  {
+    "domain" : "http://backend_container:8081/"
+  },
+  "websocket":
+  {
+    "url" : "ws://backend_container:8085/subscribe"
+  }
+}
